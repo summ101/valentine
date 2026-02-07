@@ -25,34 +25,28 @@ const PhotoGallery = () => {
   }, []);
 
   const captions = [
-    "Our favorite place ✨",
+    "The day you made me blush✨",
     "That perfect day 🌸",
-    "Laughing together 😄",
-    "Adventures await 🌍",
-    "Sweet moments 💕",
-    "My favorite smile 😊",
-    "Us being us 💖",
-    "Forever memories 📸",
+    "Us in collage 🏢",
+    "your first Bday with me💝✨",
+    "9 Month's Completed🧿💕",
+    "Our first event together😌✨",
+    "Increasing temprature 🔥",
+    "My peace 📸",
   ];
 
   const rotations = [-2, 1.5, -1, 2, -1.5, 1, -2.5, 1.5];
 
-  const getEntryAnimation = (index: number, isVisible: boolean) => {
-    if (!isVisible) {
-      const animations = [
-        "opacity-0 -translate-x-16 -rotate-6",
-        "opacity-0 translate-x-16 rotate-6",
-        "opacity-0 translate-y-12 scale-75",
-        "opacity-0 -translate-x-20 rotate-3",
-        "opacity-0 translate-x-20 -rotate-3",
-        "opacity-0 -translate-y-12 scale-75",
-        "opacity-0 -translate-x-12 rotate-12",
-        "opacity-0 translate-x-12 -rotate-12",
-      ];
-      return animations[index % animations.length];
-    }
-    return "opacity-100 translate-x-0 translate-y-0 scale-100";
-  };
+  const photos = [
+  "/pic1.jpg",
+  "/pic2.jpg",
+  "/pic3.jpg",
+  "/pic4.webp",
+  "/pic5.jpg",
+  "/pic6.jpg",
+  "/pic7.jpg",
+  "/pic8.jpg",
+];
 
   return (
     <section className="snap-section min-h-screen py-20 px-4 gradient-hero">
@@ -70,8 +64,7 @@ const PhotoGallery = () => {
               key={index}
               ref={(el) => (itemRefs.current[index] = el)}
               data-index={index}
-              className={`transition-all duration-700 ease-out
-                         ${getEntryAnimation(index, visibleItems.has(index))}`}
+              className="transition-all duration-700 ease-out opacity-100"
               style={{
                 transform: visibleItems.has(index)
                   ? `rotate(${rotations[index]}deg)`
@@ -82,26 +75,11 @@ const PhotoGallery = () => {
               <div className="gallery-item rounded-2xl overflow-hidden bg-card shadow-lg border border-border/30">
                 {/* Photo placeholder */}
                 <div className="aspect-[3/4] relative overflow-hidden bg-secondary flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                      <svg
-                        className="w-8 h-8 md:w-10 md:h-10 text-primary/40"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-sm text-muted-foreground font-handwritten">
-                      Add your photo here
-                    </p>
-                  </div>
+                  <img
+                 src={photos[index]}
+                  alt={captions[index]}
+                  className="w-full h-full object-cover"
+                 />
 
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-primary/0 hover:bg-primary/10 transition-colors duration-300" />

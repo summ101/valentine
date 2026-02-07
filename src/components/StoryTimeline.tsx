@@ -15,9 +15,9 @@ const timelineItems: TimelineItem[] = [
     emoji: "✨",
   },
   {
-    title: "Our First Conversation",
+    title: "Talking to you",
     date: "When words became magic",
-    description: "We talked for hours like we'd known each other for lifetimes. Every word felt like coming home.",
+    description: "Talking to you became the best part of my everyday life, i felt home in your voice ",
     emoji: "💬",
   },
   {
@@ -35,8 +35,8 @@ const timelineItems: TimelineItem[] = [
   {
     title: "Our Adventures",
     date: "Making memories together",
-    description: "Every road trip, every late-night talk, every silly moment became a treasure I hold dear.",
-    emoji: "🌍",
+    description: "I never thought, i am gonna attend so many hackathon in diffrent cities with my little kajju, we fuckin infiltrated Microsoft !!, And many more adventures yet to come.",
+    emoji: "🔥",
   },
   {
     title: "Right Now",

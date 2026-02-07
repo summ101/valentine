@@ -7,17 +7,21 @@ const LetterReveal = () => {
   const [isComplete, setIsComplete] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  const fullText = `My Dearest,
+  const fullText = `My Dearest Vidhika💖,
 
-From the very first moment I met you, I knew something beautiful was beginning. You walked into my life and painted it with colors I never knew existed.
+  Thankyou for choosing me, Thankyou for listening me, Thankyou for understanding me, Thankyou for taking care of me, tujhe pata he you are the most special person in my life 
 
-Every day with you feels like a gift I didn't know I was waiting for. Your laugh is my favorite sound, your smile is my favorite sight, and your heart is my favorite home.
+  mujhe bohot acha lagta he tere sath time spend kerna teri saaaaarii " pata he ajj kya hua " wali baten sunna, tujhe dekhte rehna, chahe jitna dekho mnn hi nai bharta or na bhare ga 
 
-Thank you for being you — for your kindness, your patience, your warmth, and your love. You make me want to be the best version of myself.
+  mujhe tu boht zadaaaa pyari lagti he jab tu dhire se apna sir mujhprr tikaleti he vo bohot pyara moment hota he mere liye, mujhe tujhe  adore kerna bohot pasand he, mene bachpan se
 
-I don't just love you for who you are — I love who I am when I'm with you.
+  bss yahi chaha he ki mera koi esa ho jisse me Hakk se or bohot selfishly apna kehsakun, or mujhe tu mili, orr me bohot zada khus hun, hnn tu thora sa to gussa dilla ti he jab tu baat 
 
-Forever and always yours ❤️`;
+  nai manti he, tujhe kissi kerne ka mnn kera he My sweet little kajju, 
+
+  Iam always yours forever🧿❤️  
+  Your Dearest Sum
+   `;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
