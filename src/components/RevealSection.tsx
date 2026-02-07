@@ -48,26 +48,11 @@ const RevealSection = () => {
         {/* GIF placeholder instead of heart */}
         <div className="mb-8 scale-bounce">
           <div className="w-40 h-40 md:w-52 md:h-52 mx-auto rounded-2xl overflow-hidden bg-secondary/60 border-2 border-primary/20 shadow-xl flex items-center justify-center">
-            <div className="text-center p-4">
-              <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <svg
-                  className="w-8 h-8 text-primary/40"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <p className="text-xs text-muted-foreground font-handwritten text-sm">
-                Add your GIF here
-              </p>
-            </div>
+            <img
+            src="/bubu kiss.gif"
+           alt="bubu kiss gif"
+            className="w-full h-full object-cover"
+           />
           </div>
         </div>
 
