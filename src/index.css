@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Dancing+Script:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 40% 93%;
+    --foreground: 340 60% 15%;
+
+    --card: 340 30% 96%;
+    --card-foreground: 340 60% 15%;
+
+    --popover: 340 30% 96%;
+    --popover-foreground: 340 60% 15%;
+
+    --primary: 340 80% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 50% 88%;
+    --secondary-foreground: 340 70% 30%;
+
+    --muted: 340 25% 90%;
+    --muted-foreground: 340 20% 50%;
+
+    --accent: 350 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 340 30% 85%;
+    --input: 340 30% 85%;
+    --ring: 340 80% 42%;
+
+    --radius: 1rem;
+
+    --cream: 30 50% 96%;
+    --rose-light: 340 50% 85%;
+    --rose-deep: 340 85% 35%;
+    --blush: 350 60% 92%;
+    --warm-red: 350 80% 50%;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-handwritten: 'Dancing Script', cursive;
+    --font-body: 'Lato', sans-serif;
+
+    --gradient-romantic: linear-gradient(135deg, hsl(340 50% 90%), hsl(350 60% 85%), hsl(340 40% 88%));
+    --gradient-hero: linear-gradient(180deg, hsl(340 45% 88%) 0%, hsl(350 55% 85%) 50%, hsl(340 50% 90%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(340 80% 42%), hsl(350 85% 55%));
+    --gradient-warm: linear-gradient(180deg, hsl(30 50% 96%) 0%, hsl(340 50% 90%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .font-handwritten {
+    font-family: var(--font-handwritten);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .gradient-romantic {
+    background: var(--gradient-romantic);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Heart shower animation */
+@keyframes heart-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) rotate(20deg) scale(1);
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes heart-sway {
+  0%, 100% { transform: translateX(0px); }
+  25% { transform: translateX(15px); }
+  75% { transform: translateX(-15px); }
+}
+
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-bounce {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.heart-float {
+  animation: heart-float var(--duration, 8s) var(--delay, 0s) ease-in-out infinite;
+}
+
+.heart-sway {
+  animation: heart-sway 3s ease-in-out infinite;
+}
+
+.pulse-heart {
+  animation: pulse-heart 1.5s ease-in-out infinite;
+}
+
+.typewriter-cursor::after {
+  content: '|';
+  animation: typewriter-blink 0.8s infinite;
+  color: hsl(var(--primary));
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.scale-bounce {
+  animation: scale-bounce 0.6s ease-out forwards;
+}
+
+/* Scroll snap */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
+
+/* Photo gallery hover */
+.gallery-item {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.12) rotate(1deg);
+  box-shadow: 0 25px 50px -10px hsl(var(--primary) / 0.35);
+  z-index: 10;
+}
+
+/* No button dodge */
+.dodge-button {
+  transition: all 0.15s ease-out;
+  position: relative;
+}
+
+/* Hide default cursor site-wide — SparkleHeartCursor canvas draws the custom cursor */
+* {
+  cursor: none !important;
+}
+
+/* Shake animation for wrong code */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+/* Scroll animations from sides */
+@keyframes scroll-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-from-left {
+  animation-name: scroll-from-left;
+  animation-delay: 0.2s;
+}
+
+.scroll-from-right {
+  animation-name: scroll-from-right;
+  animation-delay: 0.3s;
+}
+
+.scroll-from-top {
+  animation-name: scroll-from-top;
+  animation-delay: 0.1s;
+}
+
+.scroll-from-bottom {
+  animation-name: scroll-from-bottom;
+  animation-delay: 0.4s;
+}
+
+/* Timeline connector */
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid hsl(var(--primary) / 0.3);
+}
